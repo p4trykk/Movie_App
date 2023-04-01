@@ -1,1 +1,2 @@
 testujemy jak działa github desktop.
+nowa gałąź, czy to działa?
