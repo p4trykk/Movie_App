@@ -9,8 +9,8 @@ const App = () => {
 	const [movies, setMovies] = useState([]);
 	const [searchValue, setSearchValue] = useState('');
 	const getAPIrequest =async()=>{
-		const posterLink = 'https://m.media-amazon.com/images/M/MV5BYTRiNDQwYzAtMzVlZS00NTI5LWJjYjUtMzkwNTUzMWMxZTllXkEyXkFqcGdeQXVyNDIzMzcwNjc@._V1_SX300.jpg';
-		const response = await fetch(posterLink);
+		const link = `http://www.omdbapi.com/?s=${searchValue}&apikey=338ff081`;
+		const response = await fetch(link);
 		const responseJSON =await response.json();
 
 		if(responseJSON.Search)
@@ -19,12 +19,12 @@ const App = () => {
 		}
 	};
 	useEffect(()=>{
-		getAPIrequest();
-	},[]);
+		getAPIrequest(searchValue);
+	},[searchValue]);
 
 	return (
-		<div className='container-fluid movie-app'>
-			<div className='row d-flex align-items-center mt-4 mb-4'>
+		<div class="container-fluid movie-app">
+			<div class="row">
 				<MovieListHeading heading='Movie App' />
 				<Search searchValue={searchValue} setSearchValue={setSearchValue}/>
 			</div>
