@@ -2,37 +2,32 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import MovieList from './components/MovieList';
+import MovieListHeading from './components/MovieListHeading';
+import Search from './components/MovieSearchKeyboard';
 
 const App = () => {
-	const [movies, setMovies] = useState([
+	const [movies, setMovies] = useState([]);
+	const [searchValue, setSearchValue] = useState('');
+	const getAPIrequest =async()=>{
+		const posterLink = 'https://m.media-amazon.com/images/M/MV5BYTRiNDQwYzAtMzVlZS00NTI5LWJjYjUtMzkwNTUzMWMxZTllXkEyXkFqcGdeQXVyNDIzMzcwNjc@._V1_SX300.jpg';
+		const response = await fetch(posterLink);
+		const responseJSON =await response.json();
+
+		if(responseJSON.Search)
 		{
-			Title: 'Game of Thrones',
-			Year: '2011–2019',
-			imdbID: 'tt0944947',
-			Type: 'series',
-			Poster:
-				'https://m.media-amazon.com/images/M/MV5BYTRiNDQwYzAtMzVlZS00NTI5LWJjYjUtMzkwNTUzMWMxZTllXkEyXkFqcGdeQXVyNDIzMzcwNjc@._V1_SX300.jpg',
-		},
-		{
-			Title: 'Rick and Morty',
-			Year: '2013–',
-			imdbID: 'tt2861424',
-			Type: 'series',
-			Poster:
-				'https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_SX300.jpg',
-		},
-    {
-			Title: 'BoJack Horseman',
-			Year: '2014–2020',
-			imdbID: 'tt3398228',
-			Type: 'series',
-			Poster:
-				'https://m.media-amazon.com/images/M/MV5BYWQwMDNkM2MtODU4OS00OTY3LTgwOTItNjE2Yzc0MzRkMDllXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg',
-		},
-	]);
+			setMovies(responseJSON.Search);
+		}
+	};
+	useEffect(()=>{
+		getAPIrequest();
+	},[]);
 
 	return (
 		<div className='container-fluid movie-app'>
+			<div className='row d-flex align-items-center mt-4 mb-4'>
+				<MovieListHeading heading='Movie App' />
+				<Search searchValue={searchValue} setSearchValue={setSearchValue}/>
+			</div>
 			<div className='row'>
 				<MovieList movies={movies} />
 			</div>
