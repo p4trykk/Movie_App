@@ -7,13 +7,34 @@ body {
 	overflow-x: auto;
 	flex-wrap: nowrap;
 }
-.container-fluid.movie-app {
-
-}
 .row{
 	display: flex;
 	align-items: center;
 	margin-top: 4px;
 	margin-bottom: 4px;
 	background: #181c3f;
+}
+.logo1{
+	float: left;
+	color: #ffffff;
+  	background-color: transparent;
+	height: 50px;
+	width: 75px;
+	margin-right: 10px;
+	align-items: center;
+	display: flex;
+	position: relative;
+}
+.searchlogo1{
+	height: 50px;
+	width: 50px;
+	float: right;
+	display: flex;
+	position: relative;
+	align-items: center;
+}
+.form-control{
+	width: 350px;
+	float: right;
+	background-color: #181c3f;
 }
