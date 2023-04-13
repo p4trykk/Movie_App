@@ -24,6 +24,7 @@ body {
 	align-items: center;
 	display: flex;
 	position: relative;
+	margin-top: 2px;
 }
 .searchlogo1{
 	height: 50px;
@@ -38,4 +39,8 @@ body {
 	float: right;
 	background-color: #181c3f;
 	margin-top: 5px;
+}
+.col1{
+	font-family:'Figtree', sans-serif;
+	font-size: 45px;
 }
