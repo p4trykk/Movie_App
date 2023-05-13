@@ -1,5 +1,5 @@
 body {
-	background: #101327;
+	background: #181c3f;
 	color: #ffffff;
 }
 
@@ -13,6 +13,7 @@ body {
 	margin-top: 4px;
 	margin-bottom: 4px;
 	background: #181c3f;
+	width: 100%;
 }
 .logo1{
 	float: left;
@@ -26,6 +27,23 @@ body {
 	position: relative;
 	margin-top: 2px;
 }
+.logo2{
+	float: left;
+	color: #ffffff;
+  	background-color: transparent;
+	height: 40px;
+	width: 35px;
+	align-items: center;
+	display: flex;
+	position: relative;
+	margin-top: 2px;
+}
+.form-control{
+	width: 350px;
+	float: right;
+	background-color: #181c3f;
+	margin-top: 5px;
+}
 .searchlogo1{
 	height: 50px;
 	width: 50px;
@@ -34,13 +52,36 @@ body {
 	position: relative;
 	align-items: center;
 }
-.form-control{
-	width: 350px;
-	float: right;
-	background-color: #181c3f;
-	margin-top: 5px;
-}
 .col1{
 	font-family:'Figtree', sans-serif;
 	font-size: 45px;
+}
+.image-container {
+	position: relative;
+	transition: transform 0.2s;
+	width: auto;
+}
+
+.image-container:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+
+.image-container:hover .overlay {
+	opacity: 1;
+}
+
+.overlay {
+	position: absolute;
+	background: rgba(0, 0, 0, 0.8);
+	width: auto;
+	transition: 0.5s ease;
+	opacity: 0;
+	bottom: 0;
+	margin-left: 120px;
+	font-size: 20px;
+	padding: 20px;
+	text-align: center;
+	border-radius: 10px;
+	margin-bottom: 10px;
 }
