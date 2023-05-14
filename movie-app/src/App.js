@@ -7,6 +7,8 @@ import Search from './components/MovieSearchKeyboard';
 import AddFavourites from './components/AddToFavList';
 import RemoveFavourites from './components/DeleteFromFavList';
 import MovieListHeadingFav from './components/MovieListFav';
+import Details from './components/Details';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const App = () => {
 	const [movies, setMovies] = useState([]);
@@ -57,26 +59,30 @@ const App = () => {
 	};
 
 	return (
-		<div className='container-fluid movie-app'>
-			<div className='row d-flex align-items-center mt-4 mb-4'>
-				<MovieListHeading heading='Movies App' />
-				<Search searchValue={searchValue} setSearchValue={setSearchValue} />
-			</div>
-			<div className='row'>
-				<MovieList movies={movies} handleFavouritesClick={addFavouriteMovie}
-					favouriteComponent={AddFavourites}/>
-			</div>
-			<div className='row d-flex align-items-center mt-4 mb-4'>
-				<MovieListHeadingFav heading='Favorites' />
-			</div>
-			<div className='row'>
-				<MovieList
-					movies={favourites}
-					handleFavouritesClick={removeFavouriteMovie}
-					favouriteComponent={RemoveFavourites}
-				/>
-			</div>
-		</div>
+		<Routes>
+			<Route path="/" element={
+						<div className='container-fluid movie-app'>
+				<div className='row d-flex align-items-center mt-4 mb-4'>
+					<MovieListHeading heading='Movies App' />
+					<Search searchValue={searchValue} setSearchValue={setSearchValue} />
+				</div>
+				<div className='row'>
+					<MovieList movies={movies} handleFavouritesClick={addFavouriteMovie}
+						favouriteComponent={AddFavourites}/>
+				</div>
+				<div className='row d-flex align-items-center mt-4 mb-4'>
+					<MovieListHeadingFav heading='Favorites' />
+				</div>
+				<div className='row'>
+					<MovieList
+						movies={favourites}
+						handleFavouritesClick={removeFavouriteMovie}
+						favouriteComponent={RemoveFavourites}
+					/>
+				</div>
+			</div>} />
+			<Route path="/details" element={<Details />} />
+		</Routes>
 	);
 };
 
