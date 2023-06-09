@@ -5,9 +5,11 @@ import { BiMoviePlay } from 'react-icons/bi';
 const MovieListHeading = (props) => {
 	return (
 		<div className='col'>
-			<h1 className='col1'>
-				{props.heading}
-				<BiMoviePlay className="logo1"/>
+			<h1 className='col2'>
+				<h2 className='col33'>
+					{props.heading}
+					<BiMoviePlay className="logo1"/>
+				</h2>
 			</h1>
 			
 		</div>

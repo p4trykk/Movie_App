@@ -79,14 +79,22 @@ const App = () => {
     }
 
     return (
-      <div>
+      <div className='details-conteinerr'>
         <div className='row d-flex align-items-center mt-4 mb-4'>
           <MovieListHeading heading='Movies App' />
         </div>
-        <h1 className="movie-details-title">{movieDetails.Title}</h1>
-        <div>
-          <img src={movieDetails.Poster} alt='movie' className='poster-details' />
+        <div >
           <div className="movie-details-info">
+          <div className='conteiner-big'>
+            <div className='poster-details-border'>
+              <img src={movieDetails.Poster} alt='movie' className='poster-details' />
+            </div>
+          </div>
+
+            <div className='row-row'>
+              <h1 className="movie-details-title">{movieDetails.Title}</h1>
+              <h1 className="movie-rating">{movieDetails.imdbRating}</h1>
+            </div>
             <p>
               <b>Genre:</b> {movieDetails.Genre}
             </p>
@@ -95,6 +103,9 @@ const App = () => {
             </p>
             <p>
               <b>Launch:</b> {movieDetails.Released}
+            </p>
+            <p>
+              <b>Country:</b> {movieDetails.Country}
             </p>
             <p>
               <b>Plot:</b> {movieDetails.Plot}
