@@ -5,8 +5,8 @@ const MovieListHeadingFav = (props) => {
 	return (
 		<div className='col'>
 			<h1 className='col1'>
+				<AiFillHeart className="logo1"/>
 				{props.heading}
-                <AiFillHeart className="logo1"/>
 			</h1>
 		</div>
 	);

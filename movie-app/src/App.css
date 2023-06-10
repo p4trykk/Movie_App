@@ -195,11 +195,26 @@ body {
 
 
 .movie-details-title {
-	font-size: 40px;
+	font-size: 55px;
 	margin-top: 20px;
 	font-family:'Figtree', sans-serif;
+	border: 2px #ffffff;
+	padding: 5px;
+	letter-spacing: 2px;
+	background: linear-gradient(to right,#05e0fc,#0526fc,#ba05fc, #05e0fc);	
+	-webkit-background-clip: text;
+	/* -webkit-text-fill-color: transparent; */
+	-webkit-text-stroke: 3px transparent;
+	animation: shine 6s infinite linear;
 }
-  
+@keyframes shine {
+	0% {
+	  background-position: -80px;
+	}
+	100% {
+	  background-position: 460px;
+	}
+  } 
 
 .poster-details {
 	float: left;
