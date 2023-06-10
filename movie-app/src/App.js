@@ -11,6 +11,7 @@ import { Routes, Route, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { RiArrowGoBackLine } from "react-icons/ri";
 import { Link } from 'react-router-dom';
+import MovingText from 'react-moving-text';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -108,12 +109,28 @@ const App = () => {
               <b>Country:</b> {movieDetails.Country}
             </p>
             <p>
+              <b>Time:</b> {movieDetails.Runtime}
+            </p>
+            <p>
               <b>Plot:</b> {movieDetails.Plot}
+            </p>
+            <p>
+              <b>Awards:</b> {movieDetails.Awards}
             </p>
           </div>
         </div>
         <Link to={`/pazig_app`} className='back-to-home-pg'>
-          <RiArrowGoBackLine className="logo-back"/> Back to home page
+          <MovingText
+            type="pulse"
+            duration="2500ms"
+            delay="0s"
+            direction="normal"
+            timing="ease"
+            iteration="infinite"
+            fillMode="none">
+            <RiArrowGoBackLine className="logo-back"/>
+            Back to home page
+          </MovingText> 
 				</Link>
       </div>
     );
