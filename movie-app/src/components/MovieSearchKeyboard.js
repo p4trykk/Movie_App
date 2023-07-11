@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BiSearch } from 'react-icons/bi';
+import { BiMicrophone } from 'react-icons/bi';
 
 const Search = (props) => {
   const [voiceSearchActive, setVoiceSearchActive] = useState(false);
@@ -41,8 +41,8 @@ const Search = (props) => {
           onChange={(event) => props.setSearchValue(event.target.value)}
           placeholder='search'
         ></input>
-        <BiSearch className="searchlogo1" onClick={handleSpeechRecognition} style={{cursor: 'pointer'}} />
-        {voiceSearchActive && <span style={{ marginLeft: '0.5rem' }}>Speak now...</span>}
+        <BiMicrophone className="searchlogo1" onClick={handleSpeechRecognition} style={{cursor: 'pointer'}} />
+        {voiceSearchActive && <span style={{ marginLeft: '0.5rem', fontSize: '20px' }}>Speak now...</span>}
       </h1>
     </div>
   );
